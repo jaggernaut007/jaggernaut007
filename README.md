@@ -1,30 +1,62 @@
 <h1 align="center">Shreyas Jagannath</h1>
 
 <p align="center">
-  Senior Applied AI Engineer · Agentic systems, developer tooling and forward deployed engineering · London, UK
+  Applied AI Engineer in London. I build production agents and the context, evaluation and governance around them.
 </p>
 
 <p align="center">
-  <a href="https://shreyasjagannath.com"><img src="https://img.shields.io/badge/Portfolio-shreyasjagannath.com-black?style=flat-square&logo=googlechrome&logoColor=white" /></a>
+  <a href="https://shreyasjagannath.com"><img src="https://img.shields.io/badge/Portfolio-shreyasjagannath.com-0E6B4E?style=flat-square&logo=googlechrome&logoColor=white" /></a>
   &nbsp;
   <a href="https://linkedin.com/in/shreyasjagannath"><img src="https://img.shields.io/badge/LinkedIn-shreyasjagannath-0A66C2?style=flat-square&logo=linkedin&logoColor=white" /></a>
   &nbsp;
   <a href="mailto:shreyasjag@hotmail.com"><img src="https://img.shields.io/badge/Email-shreyasjag@hotmail.com-EA4335?style=flat-square&logo=minutemailer&logoColor=white" /></a>
   &nbsp;
-  <a href="https://pypi.org/project/nexus-mcp-ci/"><img src="https://img.shields.io/badge/PyPI-nexus--mcp--ci-3775A9?style=flat-square&logo=pypi&logoColor=white" /></a>
+  <a href="https://pypi.org/project/nexus-mcp-ci/"><img src="https://img.shields.io/pypi/v/nexus-mcp-ci?style=flat-square&label=nexus-mcp-ci&color=3775A9&logo=pypi&logoColor=white" /></a>
+  &nbsp;
+  <a href="https://pepy.tech/projects/nexus-mcp-ci"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fjaggernaut007.github.io%2Fnexus-mcp%2Fdownloads-badge.json&style=flat-square" /></a>
 </p>
 
 ---
 
-## Background
+## About
 
-I build agentic systems and developer tooling, ship them to production, and deploy them alongside the people who use them. I have 8+ years in software: computer-vision research for ISRO's Chandrayaan rover, CTO of a 10-person AI/AR startup, and founding engineer at three AI companies. I hold an MSc in Artificial Intelligence (Distinction) from the University of Surrey.
+I build agentic systems end to end and make them hold up in production: the context they work from, the evaluation that gates each change, and the controls on what they can do. I have 8+ years in software, from computer-vision research for ISRO's Chandrayaan rover to production agents, and an MSc in Artificial Intelligence (Distinction) from the University of Surrey.
 
-At **Lendable**, I am a Senior AI Engineer, forward deployed across engineering teams to measure and improve how they use AI. I modelled incident.io, Jira, Datadog and GitHub data into governed, OKR-level Snowflake metrics. On top of that data, I built the **AI Hub**: a full-stack dashboard that unifies GitHub, Jira, Claude and Codex telemetry. I instrumented the organisation's agent skills and cut developer workflow times by up to 10%.
+Most recently I was a Senior AI Engineer at **Lendable**, an FCA-regulated lender. I modelled incident.io, Jira, Datadog, GitHub and Backstage data into governed Snowflake metrics, gave engineers governed data access through a scoped agent skill, worked on the **AI Hub** that shows how the engineering org uses AI, and cut developer workflow times by up to 10%.
 
-Before Lendable, I shipped agentic AI at the production edge. At **Klyft**, I cut LLM token costs 10x and made the core agent 3x faster (60s → 20s). At **Move By Vision**, I took a healthtech platform out of critical failure: 100% of AI crashes removed, latency down 55%, and a GDPR / EU AI Act audit done.
+Before that, at **Klyft**, I cut tokens on the heaviest agent messages 10x (~100k → ~10k) and made the core agent 3x faster (60s → 20s). At **Move By Vision**, a guard-rail and validation layer removed 100% of AI crash failures in alpha-stage testing, generation latency fell 55% (15s → 7s), and I ran a GDPR and EU AI Act compliance audit.
 
-Alongside client work, I build in the open. **Nexus-MCP** is a local code-intelligence server for AI coding agents, published on PyPI. **Protash** turns a plain-English business intent into a deployed prototype in under 5 minutes.
+**Open to** applied AI, context engineering and AI governance roles where I build and own a system inside one team, at product companies or consulting and services firms. London, hybrid or on-site. Also open to podcast and event invitations: [speaker kit](https://shreyasjagannath.com/speaking/).
+
+---
+
+## Nexus-MCP
+
+**Your coding agent reads less code to find the right file.** [Nexus-MCP](https://github.com/jaggernaut007/Nexus-MCP) is a local MCP server for Claude Code, Codex, Cursor and any MCP client: hybrid code search (local embeddings plus BM25) and a code graph. No API keys, no cloud, MIT.
+
+- **95% fewer tokens** than Grep and Read to reach the right file (median, 10 open-source repos in 10 languages), and **9× faster** search.
+- In live Claude Code runs on 11 repos, the cost per task was lower on 8 of 11, with **64 of 66 tasks correct** against 61 of 66.
+- 1,676 tests, 24 Architecture Decision Records. On PyPI and the official MCP Registry. [All numbers and raw runs](https://jaggernaut007.github.io/nexus-mcp/benchmarks.html).
+
+```bash
+uvx --python 3.12 nexus-mcp-ci setup   # finds your MCP clients and asks before it writes
+uvx --python 3.12 nexus-mcp-ci eval    # free, offline check on your own repo, no LLM
+```
+
+---
+
+## Projects
+
+| Project | Description | Tech |
+|---|---|---|
+| [**Nexus-MCP**](https://github.com/jaggernaut007/Nexus-MCP) | Local code-intelligence MCP server: hybrid search and a call graph, so a coding agent finds the right file with 95% fewer tokens (median, 10 repos). 8 tools (5 by default), call graphs in 10 languages, search in 25+, about 90 MB idle | Python · ONNX Runtime · LanceDB · tree-sitter · rustworkx |
+| [**Protash**](https://github.com/jaggernaut007/Protash) | Describe a business intent and get a deployed prototype back in under 5 minutes. Six agent stages, with QA and review agents that request fixes before anything reaches the screen. [Live demo](https://protash.shreyasjagannath.com) | Next.js · TypeScript · DeepSeek · GCP Cloud Run |
+| **Agent Harness** *(private)* | Connects agents to live databases and APIs and builds validated dashboards. Every SQL path goes through one read-only guard by construction, and no response model can carry a credential back to the LLM. Hardened through adversarial review; 274 tests | Python · FastAPI · sqlglot · SSE |
+| **CR8** *(private)* | 3-agent LangGraph pipeline that turns a university curriculum into study guides, narrated video and quizzes. A two-layer evaluation framework gates every output | LangGraph · FastAPI · React · Cloud Run |
+| **JobScout** *(private)* | Daily pipeline that pulls ~30,000 jobs from 13 ATS platforms and checks each employer and salary against fixed rules. A free keyword tier removes ~80% of jobs before the LLM tier, so LLM cost stays under $0.01/day. 1,035 tests | Python · LangGraph · Embeddings |
+| [**Health Intelligence Engine**](https://github.com/jaggernaut007/healthAgent) | Turns supplement queries into evidence-grounded recommendations from NIH DSLD and PubMed through a Neo4j knowledge graph. A Pharmacovigilance Critic checks each one against the user's allergies and medications | LangGraph · Neo4j · RAG · DeepEval |
+| [**Knowledge Graph Agent**](https://github.com/jaggernaut007/fabric-context-portability) | Turns raw search history into a Neo4j knowledge graph, then generates personalised video with Gemini and Veo 3.1. 11 semantic categories extracted for under $1 in API cost | Python · Neo4j · Gemini · Veo 3.1 |
+| [**RevGeni Agent**](https://github.com/jaggernaut007/RevGeniAgent) | Async multi-agent pipeline that crawls the web, qualifies companies, enriches contacts and writes leads into a GraphQL CRM | Python · Multi-agent · GCP · GraphQL |
 
 ---
 
@@ -83,65 +115,52 @@ Alongside client work, I build in the open. **Nexus-MCP** is a local code-intell
 
 ---
 
-## Projects
-
-| Project | Description | Tech |
-|---|---|---|
-| [**Nexus-MCP**](https://github.com/jaggernaut007/nexus-mcp) | Local code-intelligence MCP server for AI coding agents. Fuses vector search, BM25 and a code graph to cut tokens on code lookups by 70–90%. 15 tools, 25+ languages, <350MB RAM, no API keys. On [PyPI](https://pypi.org/project/nexus-mcp-ci/) and the Glama MCP marketplace | Python · ONNX Runtime · LanceDB · tree-sitter · rustworkx |
-| [**Protash**](https://github.com/jaggernaut007/Protash) | Describe a business intent and get a deployed prototype back in under 5 minutes. A 6-stage multi-agent pipeline generates a React app, then QA and review agents self-heal it over up to 5 correction rounds. [Live demo](https://protash.shreyasjagannath.com) | Next.js · TypeScript · DeepSeek · GCP Cloud Run |
-| **CR8** *(private)* | 3-agent LangGraph pipeline that turns a university curriculum into study guides, decks, AI-narrated video and Bloom's-taxonomy quizzes. A two-layer eval framework scores every output. 1,299 tests | LangGraph · FastAPI · React · Kokoro TTS · Cloud Run |
-| **JobScout** *(private)* | Daily pipeline that pulls ~30,000 jobs from 13 ATS platforms and checks each employer against the UK sponsor register. A free keyword tier removes ~80% of jobs before the LLM tier, so LLM cost stays under $0.01/day | Python · LangGraph · Embeddings |
-| [**Health Intelligence Engine**](https://github.com/jaggernaut007/healthAgent) | 9-node LangGraph pipeline that grounds supplement advice in NIH DSLD and PubMed through a Neo4j knowledge graph. A pharmacovigilance critic checks each recommendation against the user's allergies and medications | LangGraph · Neo4j · RAG · DeepEval |
-| [**Knowledge Graph Agent**](https://github.com/jaggernaut007/fabric-context-portability) | NLP agent that turns raw search history into a Neo4j knowledge graph, then generates personalised video with Gemini and Veo 3.1. 11 semantic categories extracted for under $1 in API cost | Python · Neo4j · GPT-5-nano · Gemini · Veo 3.1 |
-| [**RevGeni Agent**](https://github.com/jaggernaut007/RevGeniAgent) | Async multi-agent pipeline that crawls the web, qualifies companies, enriches contacts and writes leads into a GraphQL CRM | Python · Multi-agent · GCP · GraphQL |
-
----
-
 ## Experience
 
-**Lendable**
-**Senior AI Engineer** · Jul 2026 – Present
-- Forward deployed across engineering teams to measure and improve how they use AI
-- Modelled incident.io, Jira, Datadog and GitHub data into governed, OKR-level Snowflake metrics for leadership
-- Built the AI Hub: a full-stack dashboard that unifies GitHub, Jira, Claude and Codex telemetry into one view
-- Cut developer workflow times by up to 10% through agent-skill instrumentation and automatic ticket-to-skill detection
-- Built a company-level cycle-time model that attributes each PR to a team from historical contribution share, with a manager-facing correction loop
+**Lendable Operations Ltd**
+**Senior AI Engineer** · Jul 2026 – Sep 2026
+- Modelled incident.io, Jira, Datadog, GitHub and Backstage data into governed, OKR-level Snowflake metrics that leadership could act on
+- Gave engineers agentic access to governed data through a scoped, auditable agent skill rather than an MCP server, to meet FCA security requirements
+- Worked on the AI Hub, a full-stack dashboard that unifies GitHub, Jira, Claude and Codex telemetry
+- Cut developer workflow times by up to 10% by instrumenting the organisation's agent skills, with automatic ticket-to-skill detection
+- Built a company-level cycle-time model on the GitHub GraphQL API that attributes each PR to a team from historical contribution share, with a manager-facing correction loop
 - Shipped on Terraform/Terragrunt, GitHub Actions and Argo CD, with Okta SCIM/OIDC authentication
 
-**Move By Vision**
-**Founding Engineer (Pro Bono)** · Dec 2025 – May 2026
-- Took over a Flutter + GCP healthtech platform in critical-failure alpha
-- Built a guardrail and validation layer across the Vertex AI integrations and removed 100% of AI crash failures
-- Cut generation latency by 55% (15s → 7s) and completed a GDPR / EU AI Act compliance audit
+**We Are Human Agency AB (Move By Vision)**
+**Consultant (Pro Bono)** · Dec 2025 – Jun 2026
+- Took over a Flutter and GCP healthtech platform in critical-failure alpha
+- Built a guard-rail and validation layer across the Vertex AI integrations that removed 100% of AI crash failures in alpha-stage testing
+- Cut generation latency by 55% (15s → 7s) and ran a GDPR and EU AI Act compliance audit
 
 **Klyft Technologies**
 **Founding AI Engineer** · Sep 2025 – Nov 2025
-- Built the full agentic stack for a coaching platform: multi-agent orchestration, RAG guardrails, memory, observability and CI/CD on GCP
-- Cut LLM token costs 10x through prompt optimisation and caching
-- Made the core workout-calibration agent 3x faster (60s → 20s), with 100% pilot uptime and 100% safe guardrailed outputs
+- Took an eight-agent coaching platform to production on Google ADK and Vertex AI, with each agent scoped to its own data
+- Cut tokens on the heaviest messages 10x (~100k → ~10k) by pre-summarising wearable data and scoping each agent's data access
+- Evaluated Gemini 2.5 Flash against Pro on golden datasets to near-parity, so Pro never ran in production
+- Made the core workout-calibration agent 3x faster (60s → 20s) with async Pub/Sub processing and OpenTelemetry tracing
 
 **Scan and Sew Inc.**
-**Founding Engineer** · Oct 2024 – Aug 2025
+**Chief Data Officer (Founding Team)** · Oct 2024 – Aug 2025
 - Shipped a Designer AI Assistant (RAG over design documents) and a real-time manufacturing tracking platform
 - Evaluated custom Gaussian Splatting against third-party APIs and chose the API, which saved months of development
 
 <details>
 <summary>Earlier roles</summary>
 
-**AIMAGE Technologies** · Chief Technology Officer · Jan 2020 – Aug 2023
-- Founded the company and grew the team to 10 across engineering, product and design
+**AIMAGE Technologies** · Founder & CTO · Jan 2020 – Aug 2023
+- Grew the team to 10 across engineering, product and design
 - Built a custom vectoriser and a graph-based vector database for visual search, live on a retail client's storefront
 - Built a virtual try-on engine (OpenCV, PyTorch, Unity3D) on AWS (Lambda, ECS, Neptune, DynamoDB, Kinesis)
 
-**Mage Ventures** · Software Consultant · Oct 2019 – Mar 2021
+**Mage Ventures** · Founder & Consultant (Part-time) · Oct 2019 – Mar 2021
 - Implemented a cross-platform payment gateway for Walmart-owned PhonePe
 - Built a computer-vision checkout engine for grocery retail
 
-**Cellstrat Inc.** · AI Consultant (Founding Team) · Oct 2018 – Oct 2020
+**Cellstrat Inc.** · AI Consultant (Contract, Founding Team) · Oct 2018 – Oct 2020
 - Delivered AI/ML work for TVS Motors, Target, Airbus and Volvo in PyTorch, TensorFlow and Keras on AWS
 - Delivered a workshop at ODSC on enterprise AI and deep learning to 100+ professionals
 
-**EndGate Global** · Full Stack Engineer · Jul 2017 – Jul 2018
+**EndGate Global** · Full Stack Engineer (Founding Team) · Jul 2017 – Jul 2018
 - Built bulk food-delivery order workflows in Java, Spring, Hibernate and MySQL
 
 **ISRO** · AI Researcher Intern · Nov 2016 – Apr 2017
@@ -153,9 +172,9 @@ Alongside client work, I build in the open. **Nexus-MCP** is a local code-intell
 
 ## Education
 
-- **MSc, Artificial Intelligence** (Distinction) — University of Surrey, United Kingdom *(2024)*
-- **Master's in Computer Applications** (First Class) — Christ University, India *(2017)*
-- **Bachelor's in Computer Applications** — Bangalore University, India *(2013)*
+- **MSc, Artificial Intelligence** (Distinction), University of Surrey, United Kingdom *(2024)*
+- **Master's in Computer Applications** (First Class), Christ University, India *(2017)*
+- **Bachelor's in Computer Applications**, Bangalore University, India *(2013)*
 
 **Certifications:** Claude Code in Action, Model Context Protocol, Agent Skills, Building with the Claude API (Anthropic) · LangGraph & LangSmith (LangChain Academy) · Deep Learning & Computer Vision (Stanford)
 
