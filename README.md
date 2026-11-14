@@ -1,7 +1,7 @@
 <h1 align="center">Shreyas Jagannath</h1>
 
 <p align="center">
-  Applied AI Engineer in London. I build production agents and the context, evaluation and governance around them.
+  Applied AI Engineer in London. I make AI coding agents cheaper to run and safer to trust.
 </p>
 
 <p align="center">
@@ -20,22 +20,28 @@
 
 ## About
 
-I build agentic systems end to end and make them hold up in production: the context they work from, the evaluation that gates each change, and the controls on what they can do. I have 8+ years in software, from computer-vision research for ISRO's Chandrayaan rover to production agents, and an MSc in Artificial Intelligence (Distinction) from the University of Surrey.
+I make AI coding agents cheaper to run and safer to trust. I work on three things: the context an agent reads, the evaluation that gates each change, and the controls on what the agent can do. I have 8+ years in software, from computer-vision research for ISRO's Chandrayaan rover to production agents, and an MSc in Artificial Intelligence (Distinction) from the University of Surrey.
 
 Most recently I was a Senior AI Engineer at **Lendable**, an FCA-regulated lender. I modelled incident.io, Jira, Datadog, GitHub and Backstage data into governed Snowflake metrics, gave engineers governed data access through a scoped agent skill, worked on the **AI Hub** that shows how the engineering org uses AI, and cut developer workflow times by up to 10%.
 
 Before that, at **Klyft**, I cut tokens on the heaviest agent messages 10x (~100k → ~10k) and made the core agent 3x faster (60s → 20s). At **Move By Vision**, a guard-rail and validation layer removed 100% of AI crash failures in alpha-stage testing, generation latency fell 55% (15s → 7s), and I ran a GDPR and EU AI Act compliance audit.
 
-**Open to** applied AI, context engineering and AI governance roles where I build and own a system inside one team, at product companies or consulting and services firms. London, hybrid or on-site. Also open to podcast and event invitations: [speaker kit](https://shreyasjagannath.com/speaking/).
+**Open to offers** for applied AI, context engineering and AI governance roles where I build and own a system inside one team, at product companies or consulting and services firms. London, hybrid or on-site.
+
+**Work with me** ([three ways to start](https://shreyasjagannath.com/#work-with-me)):
+- **Hiring teams:** tell me about the role through the [contact form](https://shreyasjagannath.com/#contact).
+- **Startup teams:** ask for a free 30-minute review of how your team uses AI coding agents: context, cost per correct change, review load and governance. It is a conversation, with no charge.
+- **Hosts and organisers:** podcasts, meetups and conferences. The [speaker kit](https://shreyasjagannath.com/speaking/) has talk topics, bios and a headshot.
 
 ---
 
 ## Nexus-MCP
 
-**Your coding agent reads less code to find the right file.** [Nexus-MCP](https://github.com/jaggernaut007/Nexus-MCP) is a local MCP server for Claude Code, Codex, Cursor and any MCP client: hybrid code search (local embeddings plus BM25) and a code graph. No API keys, no cloud, MIT.
+**Your coding agent reads less code to find the right file.** [Nexus-MCP](https://github.com/jaggernaut007/Nexus-MCP) is a local MCP server for Claude Code, Codex, Cursor and any MCP client: hybrid code search (local embeddings plus BM25) and a code graph. No API keys, no cloud. Open source under the MIT licence.
 
 - **95% fewer tokens** than Grep and Read to reach the right file (median, 10 open-source repos in 10 languages), and **9× faster** search.
 - In live Claude Code runs on 11 repos, the cost per task was lower on 8 of 11, with **64 of 66 tasks correct** against 61 of 66.
+- **Where it loses, published:** on redis/redis (C) and tokio-rs/tokio (Rust) it used more tokens on an older build. A rerun is pending. The same code varies by about 20% in cost between runs.
 - 1,676 tests, 24 Architecture Decision Records. On PyPI and the official MCP Registry. [All numbers and raw runs](https://jaggernaut007.github.io/nexus-mcp/benchmarks.html).
 
 ```bash
